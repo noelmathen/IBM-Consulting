@@ -1,0 +1,16 @@
+---
+- name: Configure Web Servers
+  hosts: webservers
+  connection: local
+  become: yes
+  tags: web
+  roles:
+    - webserver_role
+
+- name: Configure DB Servers
+  hosts: dbservers
+  connection: local
+  become: yes
+  tags: db
+  roles:
+    - dbserver_role

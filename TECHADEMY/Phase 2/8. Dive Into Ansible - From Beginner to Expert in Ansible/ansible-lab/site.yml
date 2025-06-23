@@ -1,0 +1,34 @@
+#site.yml
+- name: Tasks for webservers only
+  hosts: webservers
+  connection: local
+  become: yes
+  tags: web
+  tasks:
+    - name: Install Nginx on webservers
+      apt:
+        name: nginx
+        state: present
+
+- name: Tasks for dbservers only
+  hosts: dbservers
+  connection: local
+  become: yes
+  tags: db
+  tasks:
+    - name: Install MySQL on dbservers
+      apt:
+        name: mysql-server
+        state: present
+
+- name: Use vaulted credentials
+  hosts: webservers
+  connection: local
+  become: yes
+  vars_files:
+    - creds.yml
+
+  tasks:
+    - name: Show the DB password (for demo)
+      debug:
+        var: db_password

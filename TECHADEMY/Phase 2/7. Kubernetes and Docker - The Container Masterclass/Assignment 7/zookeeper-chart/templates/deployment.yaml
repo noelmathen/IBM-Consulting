@@ -1,0 +1,26 @@
+#deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-zookeeper
+  labels:
+    app: {{ .Release.Name }}-zookeeper
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-zookeeper
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-zookeeper
+    spec:
+      containers:
+      - name: zookeeper
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"

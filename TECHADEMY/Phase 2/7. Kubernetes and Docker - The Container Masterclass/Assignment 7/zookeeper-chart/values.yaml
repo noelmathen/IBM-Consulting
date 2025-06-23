@@ -1,0 +1,13 @@
+# values.yaml
+replicaCount: 3
+
+image:
+  repository: bitnami/zookeeper
+  tag: 3.8.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 2181
+
+resources: {}

@@ -1,0 +1,43 @@
+---
+- name: Shell-based ping
+  hosts: webservers
+  connection: local
+  become: yes
+  tags: shell_ping
+
+  tasks:
+    - name: Ping via shell
+      shell: ping -c1 8.8.8.8
+      register: ping_shell
+      ignore_errors: yes
+
+    - name: Show shell ping output
+      debug:
+        var: ping_shell.stdout_lines
+
+- name: Custom Python ping
+  hosts: webservers
+  connection: local
+  become: yes
+  tags: custom_ping
+
+  tasks:
+    - name: Ping via my_ping module
+      my_ping:
+      register: ping_custom
+      ignore_errors: yes
+
+    - name: Show custom ping result
+      debug:
+        var: ping_custom
+
+- name: Filter plugin demonstration
+  hosts: webservers
+  connection: local
+  become: no
+  tags: filter_test
+
+  tasks:
+    - name: Reverse a string with our filter
+      debug:
+        msg: "{{ 'Ansible' | reverse }}"
