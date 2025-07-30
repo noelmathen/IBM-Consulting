@@ -1,0 +1,49 @@
+/* Problem 4: Background */
+#background-demo {
+  background-color: #eef;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Problem 5: Float Thumbnails */
+.float-img {
+  float: left;
+  width: 120px;
+  margin: 10px;
+}
+
+/* Problem 6: Pseudo Elements */
+.pseudo-box::after {
+  content: " ← after content";
+  color: crimson;
+}
+.pseudo-box::first-letter {
+  font-size: 2em;
+  color: teal;
+}
+::selection {
+  background: gold;
+  color: black;
+}
+
+/* Problem 7 & 11: Navbar Styling */
+.navbar {
+  background: #333;
+  padding: 10px;
+}
+.navbar a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Basic page layout */
+body { font-family: sans-serif; line-height: 1.4; }
+main { padding: 20px; }
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 5px; text-align: left; }

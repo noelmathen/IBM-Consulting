@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Awesome Web Project</title>
+  <link rel="stylesheet" href="css/style.css">          <!-- Problem 4–6,7,11 -->
+  <script src="js/script.js" defer></script>             <!-- Problem 8–12 -->
+</head>
+<body>
+  <!-- Problem 7 & 11: Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <!-- Problem 3: Markup tags -->
+    <section id="markup-demo">
+      <h2>Problem 3: Text Markup</h2>
+      <p>
+        <small>this is small text</small><br>
+        <mark>this is highlighted</mark><br>
+        <del>this is deleted</del>
+      </p>
+    </section>
+
+    <!-- Problem 4: Background styling -->
+    <section id="background-demo">
+      <h2>Problem 4: Background Styles</h2>
+      <p>This section has a background color and image.</p>
+    </section>
+
+    <!-- Problem 5: CSS float -->
+    <section id="float-demo">
+      <h2>Problem 5: Floating Thumbnails</h2>
+      <img src="images/thumb1.jpg" alt="Thumb" class="float-img">
+      <p>Text wrapping around the floated image. Lorem ipsum dolor sit amet…</p>
+    </section>
+
+    <!-- Problem 6: Pseudo‐elements -->
+    <section id="pseudo-demo">
+      <h2>Problem 6: Pseudo‐Elements</h2>
+      <div class="pseudo-box">Watch my first letter and after-content!</div>
+      <p>Select this text to see ::selection style.</p>
+    </section>
+
+    <!-- Problem 12: Dynamic Form & Table (also covers Problem 2 linking and Problem 7 page structure) -->
+    <section id="form-demo">
+      <h2>Problem 12: Dynamic Form & Table</h2>
+      <form id="demoForm">
+        <input type="text" id="txtName" placeholder="Enter your name"><br>
+        <label><input type="radio" name="opt" value="A"> Option A</label>
+        <label><input type="radio" name="opt" value="B"> Option B</label><br>
+        <select id="selColor">
+          <option value="Red">Red</option>
+          <option value="Green">Green</option>
+        </select><br>
+        <button id="btnAdd">Add Row</button>
+      </form>
+      <table id="dataTable">
+        <tr><th>Name</th><th>Choice</th><th>Color</th></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Awesome Web Project © 2025</p>
+  </footer>
+</body>
+</html>
